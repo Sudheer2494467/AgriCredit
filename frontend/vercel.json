@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build",
-  "outputDirectory": "dist/fertilizer-shop-ui",
+  "outputDirectory": "dist/fertilizer-shop-ui/browser",
   "rewrites": [
     {
       "source": "/(.*)",
