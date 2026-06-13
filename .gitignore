@@ -1,0 +1,84 @@
+# Node.js / Angular Frontend
+node_modules/
+dist/
+.angular/
+npm-debug.log
+yarn-error.log
+
+# Spring Boot / Maven Backend
+target/
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+!mvnw
+!mvnw.cmd
+!.mvn/
+!.mvn/wrapper/
+!.mvn/wrapper/maven-wrapper.properties
+build/
+
+# IDEs and Editors
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/mcp.json
+.history/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# IDE-specific
+.apt_generated
+.factorypath
+.sts4-cache
+*.iws
+*.iml
+*.ipr
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/nbdist/
+/.nb-gradle/
+
+# Environment / Secrets
+.env
+.env.local
+.env.production
+*.pem
+*.key
+
+# Logs
+*.log
+logs/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+ehthumbs.db
+
+# Angular specific
+/.angular/cache
+.sass-cache/
+/coverage
+/typings
+testem.log
+__screenshots__/
+
+# Miscellaneous
+/out-tsc
+/bazel-out
+/connect.lock
+/libpeerconnection.log
