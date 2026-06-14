@@ -1,3 +1,3 @@
 export const environment = {
-  apiUrl: "http://localhost:3039",
+  apiUrl: "https://agricredit-zp0d.onrender.com",
 };
