@@ -68,7 +68,7 @@ import { AuthService } from "../core/auth.service";
                 <input
                   matInput
                   formControlName="username"
-                  autocomplete="off"
+                  autocomplete="username"
                   placeholder="Enter username"
                 />
               </mat-form-field>
@@ -81,7 +81,7 @@ import { AuthService } from "../core/auth.service";
                   matInput
                   type="password"
                   formControlName="password"
-                  autocomplete="off"
+                  autocomplete="current-password"
                   placeholder="Enter password"
                 />
               </mat-form-field>
@@ -393,8 +393,8 @@ import { AuthService } from "../core/auth.service";
 export class LoginComponent {
   roleControl = this.fb.control("ADMIN");
   form = this.fb.group({
-    username: ["admin", Validators.required],
-    password: ["admin123", Validators.required],
+    username: ["", Validators.required],
+    password: ["", Validators.required],
   });
   loading = false;
   error = "";
