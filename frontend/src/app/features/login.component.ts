@@ -1,9 +1,11 @@
 import { Component } from "@angular/core";
 import { FormBuilder, ReactiveFormsModule, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { MatCardModule } from "@angular/material/card";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
 import { MatButtonModule } from "@angular/material/button";
+import { MatRadioModule } from "@angular/material/radio";
 import { MatIconModule } from "@angular/material/icon";
 import { CommonModule } from "@angular/common";
 import { AuthService } from "../core/auth.service";
@@ -13,9 +15,11 @@ import { AuthService } from "../core/auth.service";
   imports: [
     ReactiveFormsModule,
     CommonModule,
+    MatCardModule,
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatRadioModule,
     MatIconModule,
   ],
   template: `
@@ -338,6 +342,56 @@ import { AuthService } from "../core/auth.service";
         width: 18px;
         height: 18px;
       }
+
+      /* ── Demo ─────────────────────────────────── */
+      .demo-box {
+        margin: 0 28px 28px;
+        padding: 16px;
+        background: var(--clr-surface-alt);
+        border-radius: var(--radius-md);
+        border: 1px solid var(--clr-border);
+      }
+
+      .demo-title {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--clr-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 10px;
+      }
+
+      .demo-title mat-icon {
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+        color: var(--clr-primary-light);
+      }
+
+      .demo-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6px 0;
+        font-size: 12px;
+      }
+
+      .demo-label {
+        color: var(--clr-text-secondary);
+        font-weight: 500;
+      }
+
+      code {
+        font-family: "SF Mono", "Fira Code", monospace;
+        font-size: 11px;
+        color: var(--clr-primary-light);
+        background: rgba(99, 102, 241, 0.1);
+        padding: 3px 8px;
+        border-radius: 4px;
+      }
     `,
   ],
 })
@@ -355,7 +409,7 @@ export class LoginComponent {
     private auth: AuthService,
     private router: Router,
   ) {
-    
+
     if (this.auth.isAuthenticated() && this.auth.getRole()) {
       if (this.auth.isAdmin()) {
         this.router.navigate(["/admindashboard"]);
@@ -384,7 +438,7 @@ export class LoginComponent {
     this.auth.login(v.username!, v.password!).subscribe({
       next: () => {
         this.loading = false;
-       
+
         if (this.auth.isAdmin()) {
           this.router.navigate(["/admindashboard"]);
         } else {
