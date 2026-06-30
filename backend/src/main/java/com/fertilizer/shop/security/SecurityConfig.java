@@ -66,7 +66,7 @@ public class SecurityConfig {
         CorsConfiguration config = new CorsConfiguration();
         // Allow the Vercel frontend origin and local dev origins
         config.setAllowedOrigins(List.of(
-            "https://agri-credit-flax.vercel.app",
+            "https://illustrious-lolly-5c8645.netlify.app",
             "http://localhost:4200",
             "http://localhost:3039"
         ));
