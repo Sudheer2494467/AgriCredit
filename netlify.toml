@@ -1,7 +1,7 @@
 [build]
   base = "frontend"   # folder containing package.json
   command = "npm run build"
-  publish = "frontend/dist/fertilizer-shop-ui/browser"
+  publish = "dist/fertilizer-shop-ui/browser"   # relative to base
 
 [[redirects]]
   from = "/*"
